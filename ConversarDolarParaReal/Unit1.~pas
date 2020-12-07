@@ -53,7 +53,10 @@ procedure TForm1.BTCompraClick(Sender: TObject);
 begin
     VarNome := INPUTBOX('Nome', 'Digite Seu Nome', '');
 
-    MSG.Caption := 'Parabens ' + VarNome + ', você comprou ' + EDolar.text + ' Dolar(es).';
+    if (VarNome <> '') AND (EDOlar.text <> '0') then
+        MSG.Caption := 'Parabens ' + VarNome + ', você comprou ' + EDolar.text + ' Dolar(es).'
+    Else
+        SHOWMESSAGE('Falta informar o Nome ou o Dólar tem que ser valor maior que 0');
 
 end;
 

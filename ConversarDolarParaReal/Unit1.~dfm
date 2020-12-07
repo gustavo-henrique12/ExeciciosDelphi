@@ -16,7 +16,7 @@ object Form1: TForm1
   object DOLAR: TLabel
     Left = 17
     Top = 15
-    Width = 72
+    Width = 64
     Height = 24
     Caption = 'DOLAR'
     Font.Charset = DEFAULT_CHARSET
@@ -29,9 +29,33 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 157
     Top = 14
-    Width = 60
+    Width = 49
     Height = 24
     Caption = 'REAL'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 17
+    Top = 87
+    Width = 5
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object MSG: TLabel
+    Left = 17
+    Top = 79
+    Width = 272
+    Height = 24
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -43,7 +67,7 @@ object Form1: TForm1
     Left = 16
     Top = 40
     Width = 129
-    Height = 33
+    Height = 21
     TabOrder = 0
   end
   object Button1: TButton
@@ -59,7 +83,16 @@ object Form1: TForm1
     Left = 157
     Top = 39
     Width = 130
-    Height = 34
+    Height = 21
     TabOrder = 2
+  end
+  object BTCompra: TButton
+    Left = 352
+    Top = 32
+    Width = 121
+    Height = 41
+    Caption = 'COMPRA'
+    TabOrder = 3
+    OnClick = BTCompraClick
   end
 end

@@ -1,0 +1,127 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    EdtValor1: TEdit;
+    EdtValor2: TEdit;
+    Label1: TLabel;
+    EdtResultado: TEdit;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+
+    function Somar (Value1, Value2 : Integer): Integer;
+    function Subtrair (Value1, Value2 :Integer) : Integer;
+    function Multiplicar (Value1, Value2 : Integer) : Integer;
+    function Dividir (Value1, Value2 : Integer) : Integer;
+    function DividirReais (Value1, Value2 : currency) : Currency;
+    function Resto (Value1, Value2 : integer) : Integer;
+
+
+
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+   Resultado : Integer;
+
+begin
+   Resultado := Somar(StrToInt (EdtValor1.Text), StrToInt (EdtValor2.text));
+   EdtResultado.text := IntToStr(Resultado);
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+   Resultado : Integer;
+
+begin
+   Resultado := Subtrair(StrToInt (EdtValor1.Text), StrToInt (EdtValor2.text));
+   EdtResultado.text := IntToStr(Resultado);
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+   Resultado : Integer;
+
+begin
+   Resultado := Multiplicar(StrToInt (EdtValor1.Text), StrToInt (EdtValor2.text));
+   EdtResultado.text := IntToStr(Resultado);
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+var
+   Resultado : Currency ;
+
+begin
+   Resultado := DividirReais(StrToCurr (EdtValor1.Text), StrToCurr(EdtValor2.text));
+   EdtResultado.text := CurrToStr(Resultado);
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+var
+   Resultado : Integer;
+
+begin
+   Resultado := Dividir(StrToInt (EdtValor1.Text), StrToInt (EdtValor2.text));
+   EdtResultado.text := IntToStr(Resultado);
+end;
+
+function TForm1.Somar(Value1: integer; Value2: integer) : integer;
+begin
+   result := Value1 + Value2;
+end;
+
+function TForm1.Subtrair(Value1, Value2: Integer): Integer;
+begin
+   result := Value1 - Value2;
+end;
+
+function TForm1.Multiplicar(Value1, Value2: Integer): Integer;
+begin
+   Result := Value1 * Value2;
+end;
+
+function TForm1.Dividir(Value1, Value2: Integer): Integer;
+begin
+   Result := Value1 div Value2;
+end;
+
+function TForm1.DividirReais(Value1, Value2: currency): Currency;
+begin
+   Result := Value1 / Value2;
+end;
+
+function TForm1.Resto(Value1, Value2: integer): Integer;
+begin
+   Result := Value1 mod Value2;
+end;
+
+end.

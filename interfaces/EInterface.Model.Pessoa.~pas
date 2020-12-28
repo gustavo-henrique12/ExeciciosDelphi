@@ -35,15 +35,17 @@ end;
 function TModelPessoa.Nome(Value : String) : IPessoa;
 begin
    Result := Self;
+   Fnome := Value;
 end;
 
 function TModelPessoa.NomeCompleto(value : String) : IPessoa;
 begin
-
+   Result := Fnome + ' ' + FSobreNome;
 end;
 
 function TModelPessoa.SobreNome(Value : String) : IPessoa;
 begin
-
+   Result := self;
+   FSobreNome := Value;
 end;
 end.

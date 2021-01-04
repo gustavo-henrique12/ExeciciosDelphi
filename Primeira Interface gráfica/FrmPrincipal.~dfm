@@ -1,0 +1,88 @@
+object Form1: TForm1
+  Left = 363
+  Top = 172
+  Width = 608
+  Height = 375
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = mmInciio
+  OldCreateOrder = False
+  DesignSize = (
+    575
+    316)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 575
+    Height = 329
+    Align = alTop
+    Caption = 'pnl1'
+    TabOrder = 0
+    DesignSize = (
+      575
+      329)
+    object btn2: TButton
+      Left = 479
+      Top = 16
+      Width = 86
+      Height = 49
+      Anchors = [akTop, akRight]
+      Caption = 'btn1'
+      TabOrder = 0
+      OnClick = btn2Click
+    end
+    object edt1: TEdit
+      Left = 8
+      Top = 16
+      Width = 439
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      Text = 'edt1'
+      OnChange = edt1Change
+      OnEnter = edt1Enter
+      OnExit = edt1Exit
+    end
+  end
+  object memo1: TMemo
+    Left = 16
+    Top = 96
+    Width = 280
+    Height = 109
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Lines.Strings = (
+      'memo1')
+    TabOrder = 1
+    OnChange = memo1Change
+  end
+  object mmInciio: TMainMenu
+    Left = 400
+    Top = 128
+    object Inicio1: TMenuItem
+      Caption = 'Inicio'
+      object teste1: TMenuItem
+        Caption = 'teste'
+        object teste21: TMenuItem
+          Caption = 'teste2'
+        end
+        object teste31: TMenuItem
+          Caption = 'teste3'
+          Checked = True
+        end
+      end
+    end
+  end
+end

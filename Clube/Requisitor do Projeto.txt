@@ -1,0 +1,15 @@
+A Aplicação será um gerenciador de cadastros de sócios de um clube fictício:
+
+ Nossa Aplicação devera permitir:
+ 
+ * O Cadastro de novos sócios.
+ * A alteração de dados de um sócio.
+ * A exclusão de um sócio.
+ * A consulta de dados dos sócios.
+ * O Cadastro de novas atividades.
+ * A Alteração de dados de uma atividade.
+ * A exclusão de uma atividade.
+ * A consulta de dados das atividades.
+ * O Cadastro de novas matriculas em atividades.
+ * A exclusão de Matrículas em atividades.
+ * A cunsulta de dados das matrículas em atividades.

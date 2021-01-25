@@ -1,11 +1,11 @@
 object FormPrincipal: TFormPrincipal
-  Left = 330
-  Top = 168
+  Left = 277
+  Top = 175
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Cadastro de S'#243'cios'
   ClientHeight = 526
-  ClientWidth = 749
+  ClientWidth = 648
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -321,8 +321,8 @@ object FormPrincipal: TFormPrincipal
     ParentFont = False
   end
   object MenuPrincipal: TMainMenu
-    Left = 144
-    Top = 152
+    Left = 32
+    Top = 8
     object MenuSistema: TMenuItem
       Caption = '&Sistema'
       object SistemaBackup: TMenuItem
@@ -388,12 +388,13 @@ object FormPrincipal: TFormPrincipal
       end
       object HelpSobre: TMenuItem
         Caption = '&Sobre'
+        OnClick = HelpSobreClick
       end
     end
   end
   object PopupPrincipal: TPopupMenu
-    Left = 144
-    Top = 216
+    Left = 32
+    Top = 56
     object PopupSistema: TMenuItem
       Caption = '&Sistema'
       object PopupSistemaBackup: TMenuItem
@@ -471,6 +472,7 @@ object FormPrincipal: TFormPrincipal
       end
       object PopupHelpSobre: TMenuItem
         Caption = '&Sobre'
+        OnClick = HelpSobreClick
       end
     end
   end

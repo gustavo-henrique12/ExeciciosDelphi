@@ -61,6 +61,7 @@ type
     PopupHelpTopicos: TMenuItem;
     PopupHelpSobre: TMenuItem;
     procedure PopupSistemaFinalizarClick(Sender: TObject);
+    procedure HelpSobreClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,11 +73,18 @@ var
 
 implementation
 
+uses UnitSobre;
+
 {$R *.dfm}
 
 procedure TFormPrincipal.PopupSistemaFinalizarClick(Sender: TObject);
 begin
     Application.Terminate;
+end;
+
+procedure TFormPrincipal.HelpSobreClick(Sender: TObject);
+begin
+   FormSobre.ShowModal;
 end;
 
 end.

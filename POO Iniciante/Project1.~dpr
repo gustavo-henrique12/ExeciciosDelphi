@@ -1,8 +1,9 @@
-program Projeto_Contatos;
+program Project1;
 
 uses
   Forms,
-  Unit1_Contatos in 'Unit1_Contatos.pas' {Form1};
+  View.Principal in 'View.Principal.pas' {Form1},
+  Unit2 in 'Classe.Pessoa.pas';
 
 {$R *.res}
 

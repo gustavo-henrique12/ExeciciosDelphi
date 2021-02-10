@@ -32,13 +32,17 @@ type
     GDBQtdePorPacote: TcxGridDBColumn;
     GDBValorUnitario: TcxGridDBColumn;
     BtnBuscaMenorValor: TButton;
+    Button1: TButton;
     procedure BtnAdicionarClick(Sender: TObject);
-    procedure AdicionaIformacoesCDSDados;
+    procedure AdicionaInformacoesCDSDados;
     procedure BtnBuscaMenorValorClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
-    { Private declarations }
+
   public
-    { Public declarations }
+
   end;
 
 var
@@ -48,7 +52,9 @@ implementation
 
 {$R *.dfm}
 
-procedure TFPrincipal.AdicionaIformacoesCDSDados;
+
+
+procedure TFPrincipal.AdicionaInformacoesCDSDados;
 begin
    CDSDados.Insert;
    CDSDadosEstabelecimento.AsString := EdtEStabelecimento.Text;
@@ -64,7 +70,7 @@ end;
 
 procedure TFPrincipal.BtnAdicionarClick(Sender: TObject);
 begin
-   AdicionaIformacoesCDSDados;
+   AdicionaInformacoesCDSDados;
    CDSDados.first;
 end;
 
@@ -73,19 +79,35 @@ Var
    MenorPreco      : Currency;
    Estabelecimento : String;
 begin
-   MenorPreco := CDSDadosValorUnitario.MaxValue;
    CDSDados.first;
+   MenorPreco      := CDSDadosValorUnitario.Value;
+   Estabelecimento := CDSDadosEstabelecimento.AsString;
    while not CDSDados.Eof do begin
       if CDSDadosValorUnitario.Value <= MenorPreco then begin
          MenorPreco      := CDSDadosValorUnitario.Value;
          Estabelecimento := CDSDadosEstabelecimento.AsString;
-         CDSDados.next;
-      end Else begin
-         CDSDados.next;
       end;
+      CDSDados.next;
    end;
-   ShowMessage('O local mais barato para compra é ' + Estabelecimento + ' com o valor unitário de ' + CurrToStr(MenorPreco));
+   ShowMessage(Format('O local mais barato para compra é %s com o valor unitário de R$ %.2f', [Estabelecimento, MenorPreco]));
+end;
 
+
+procedure TFPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+   CDSDados.SaveToFile('Fraldas.xml', dfXML);
+end;
+
+procedure TFPrincipal.FormCreate(Sender: TObject);
+begin
+   if FileExists('Fraldas.XMl') then begin
+   CDSDados.LoadFromFile('Fraldas.Xml');
+   end;
+end;
+
+procedure TFPrincipal.Button1Click(Sender: TObject);
+begin
+   CDSDados.Delete;
 end;
 
 end.

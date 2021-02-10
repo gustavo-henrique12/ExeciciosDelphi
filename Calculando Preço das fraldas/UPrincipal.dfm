@@ -1,7 +1,7 @@
 object FPrincipal: TFPrincipal
   Left = 388
   Top = 224
-  Width = 953
+  Width = 857
   Height = 423
   Caption = 'Pre'#231'os de Fraldas'
   Color = clBtnFace
@@ -11,16 +11,18 @@ object FPrincipal: TFPrincipal
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
   DesignSize = (
-    937
+    841
     384)
   PixelsPerInch = 96
   TextHeight = 13
   object PanelPrincipal: TPanel
-    Left = 9
-    Top = 8
-    Width = 922
-    Height = 371
+    Left = 6
+    Top = 4
+    Width = 832
+    Height = 375
     Anchors = [akLeft, akTop, akRight, akBottom]
     Caption = '-'
     Font.Charset = DEFAULT_CHARSET
@@ -45,7 +47,7 @@ object FPrincipal: TFPrincipal
     end
     object BtnAdicionar: TButton
       Left = 184
-      Top = 176
+      Top = 127
       Width = 80
       Height = 32
       Caption = 'Adicionar'
@@ -59,8 +61,8 @@ object FPrincipal: TFPrincipal
       OnClick = BtnAdicionarClick
     end
     object EdtEstabelecimento: TExlEdit
-      Left = 163
-      Top = 88
+      Left = 162
+      Top = 50
       Properties.Alignment.Horz = taLeftJustify
       StyleDisabled.TextColor = clBlack
       StyleFocused.Color = 16772283
@@ -77,8 +79,8 @@ object FPrincipal: TFPrincipal
       Width = 121
     end
     object EdtPrecoPacote: TExlEdit
-      Left = 162
-      Top = 115
+      Left = 161
+      Top = 75
       DragKind = dkDock
       Properties.Alignment.Horz = taLeftJustify
       Properties.MaxLength = 15
@@ -99,8 +101,8 @@ object FPrincipal: TFPrincipal
       Width = 121
     end
     object EdtQtdePorPacote: TExlEdit
-      Left = 162
-      Top = 139
+      Left = 161
+      Top = 100
       Properties.Alignment.Horz = taLeftJustify
       StyleDisabled.TextColor = clBlack
       StyleFocused.Color = 16772283
@@ -118,8 +120,8 @@ object FPrincipal: TFPrincipal
       Width = 121
     end
     object BtnBuscaMenorValor: TButton
-      Left = 163
-      Top = 218
+      Left = 167
+      Top = 161
       Width = 115
       Height = 33
       Caption = 'Busca Menor Valor'
@@ -132,12 +134,28 @@ object FPrincipal: TFPrincipal
       TabOrder = 4
       OnClick = BtnBuscaMenorValorClick
     end
+    object Button1: TButton
+      Left = 720
+      Top = 321
+      Width = 89
+      Height = 32
+      Caption = 'Excluir'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial Narrow'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+      OnClick = Button1Click
+    end
   end
   object cxGrid1: TcxGrid
-    Left = 301
-    Top = 89
-    Width = 552
+    Left = 321
+    Top = 47
+    Width = 497
     Height = 272
+    Anchors = [akLeft, akTop, akBottom]
     TabOrder = 1
     object cxGrid1DBTableView1: TcxGridDBTableView
       NavigatorButtons.ConfirmDelete = False
@@ -164,14 +182,14 @@ object FPrincipal: TFPrincipal
         DataBinding.FieldName = 'QtdePorPacote'
         Options.Editing = False
         Options.Filtering = False
-        Width = 126
+        Width = 115
       end
       object GDBValorUnitario: TcxGridDBColumn
         Caption = 'VALOR UNIT'#193'RIO'
         DataBinding.FieldName = 'ValorUnitario'
         Options.Editing = False
         Options.Filtering = False
-        Width = 143
+        Width = 102
       end
     end
     object cxGrid1Level1: TcxGridLevel
